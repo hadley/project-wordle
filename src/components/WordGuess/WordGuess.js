@@ -13,13 +13,15 @@ function WordGuess() {
     <form className="guess-input-wrapper" onSubmit={handleSubmit}>
       <label htmlFor="guess-input">Enter guess:</label>
       <input
+        required
         id="guess-input"
         type="text"
         value={guess}
+        maxLength="5"
         pattern="[a-zA-Z]{5}"
         title="A guess must be five letters"
         onChange={(event) => {
-          setGuess(event.target.value.toUpperCase().slice(0, 5));
+          setGuess(event.target.value.toUpperCase());
         }}
       />
     </form>
