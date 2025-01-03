@@ -1,6 +1,5 @@
 import Game from "../Game";
 import Header from "../Header";
-import WordGuess from "../WordGuess";
 
 function App() {
   return (
@@ -9,7 +8,6 @@ function App() {
 
       <div className="game-wrapper">
         <Game />
-        <WordGuess />
       </div>
     </div>
   );
