@@ -17,7 +17,8 @@ function WordGuess({ addGuess }) {
         id="guess-input"
         type="text"
         value={guess}
-        maxLength="5"
+        minLength={1}
+        maxLength={5}
         pattern="[a-zA-Z]{5}"
         title="A guess must be five letters"
         onChange={(event) => setGuess(event.target.value.toUpperCase())}

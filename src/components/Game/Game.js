@@ -1,6 +1,7 @@
 import React from "react";
 import WordGuess from "../WordGuess";
 import Guesses from "../Guesses";
+import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 
 import { sample } from "../../utils";
 import { WORDS } from "../../data";
@@ -10,13 +11,23 @@ const answer = sample(WORDS);
 // To make debugging easier, we'll log the solution in the console.
 console.info({ answer });
 
+const initGuesses = Array.from({ length: 5 }, (i, _) => ({
+  value: "",
+  id: crypto.randomUUID(),
+}));
+
 function Game() {
-  const [guesses, setGuesses] = React.useState([]);
+  const [curGuess, setCurGuess] = React.useState(0);
+  const [guesses, setGuesses] = React.useState(initGuesses);
 
   function addGuess(guess) {
     console.log({ guess });
-    const nextGuess = { value: guess, id: crypto.randomUUID() };
-    setGuesses([...guesses, nextGuess]);
+
+    const nextGuesses = [...guesses];
+    nextGuesses[curGuess].value = guess;
+    setGuesses(nextGuesses);
+
+    setCurGuess(curGuess + 1);
   }
 
   return (
