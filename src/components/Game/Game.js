@@ -16,7 +16,7 @@ function Game() {
   const [curGuess, setCurGuess] = React.useState(0);
   const [guesses, setGuesses] = React.useState(
     range(0, NUM_OF_GUESSES_ALLOWED).map(() => ({
-      value: "     ",
+      value: "",
       id: crypto.randomUUID(),
     }))
   );
@@ -33,7 +33,7 @@ function Game() {
 
   return (
     <>
-      <Guesses guesses={guesses} />
+      <Guesses guesses={guesses} answer={answer} />
       <WordGuess addGuess={addGuess} />
     </>
   );
