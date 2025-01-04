@@ -11,7 +11,7 @@ const answer = sample(WORDS);
 // To make debugging easier, we'll log the solution in the console.
 console.info({ answer });
 
-const initGuesses = Array.from({ length: 5 }, (i, _) => ({
+const initGuesses = Array.from({ length: NUM_OF_GUESSES_ALLOWED }, (i, _) => ({
   value: "",
   id: crypto.randomUUID(),
 }));
