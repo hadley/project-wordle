@@ -5,7 +5,7 @@ function Guess({ key, value }) {
     const letters =
       value === "" ? Array.from({ length: 5 }, () => "") : Array.from(value);
     return letters.map((letter, index) => (
-      <span class="cell" key={index}>
+      <span className="cell" key={index}>
         {letter}
       </span>
     ));
