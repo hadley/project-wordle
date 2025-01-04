@@ -1,13 +1,7 @@
 import React from "react";
 import { checkGuess } from "../../game-helpers";
 
-const emptyGuess = [
-  { letter: " ", status: "" },
-  { letter: " ", status: "" },
-  { letter: " ", status: "" },
-  { letter: " ", status: "" },
-  { letter: " ", status: "" },
-];
+const emptyGuess = Array(5).fill({ letter: " ", status: "" });
 
 function Guess({ value, answer }) {
   console.log({ value, answer });
